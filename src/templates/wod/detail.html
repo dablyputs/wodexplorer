@@ -1,0 +1,21 @@
+{% extends parent_template|default:"wod/base.html" %}
+
+{% block title %}
+{% endblock %}
+
+{% block content %}
+  <dl>
+    <dt>Date Scheduled</dt>
+      <dd>{{ wod.date|date:"F jS, Y" }}</dd>
+    <br>
+    <dt>Website</dt>
+      <dd>{{ wod.url|urlize }}</dd>
+    <br>
+    <dt>Coach</dt>
+      <dd>{{ wod.coach }}</dd>
+      <br>
+  </dl>
+  {{ wod.workout|linebreaks }}
+  <a href="{% url 'wod_update' pk=wod.id %}" class="btn btn-primary stretched-link">Edit</a> |
+  <a href="{% url 'wod_delete' pk=wod.id %}" class="btn btn-primary stretched-link">Delete</a>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends parent_template|default:"wod/base.html" %}
+
+{% block title %}
+  {{ wod.id}}: delete?
+{% endblock %}
+
+{% block content %}
+  <form
+      action="."
+      method="post"
+  >
+    {% csrf_token %}
+    <p>
+      Are you sure you want to delete wod {{ wod.pk}}?
+    </p>
+    <a href="{{ wod.get_absolute_url }}" class="btn btn-primary stretched-link">
+      Cancel
+    </a>
+    <button type="submit">Delete Wod</button>
+  </form>
+{% endblock %}

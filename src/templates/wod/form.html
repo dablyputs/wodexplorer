@@ -1,0 +1,12 @@
+{% extends parent_template|default:"wod/base.html" %}
+
+{% block title %}
+  {{ block.super }} - {% if update %}Update{% else %}Create{% endif %} Wod
+{% endblock %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+    {% csrf_token %}
+    {% crispy form %}
+{% endblock %}
