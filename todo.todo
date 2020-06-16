@@ -1,0 +1,6 @@
+- [] add filter by coach
+- [] add search field atop list view
+- [] extend model to include individual movements
+- [] import hero wods, the girls, etc
+- [] add authentication and authenticated views
+- [] add testing framework
