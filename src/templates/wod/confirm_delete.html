@@ -11,11 +11,11 @@
   >
     {% csrf_token %}
     <p>
-      Are you sure you want to delete wod {{ wod.pk}}?
+      Are you sure you want to delete wod from: {{wod.sched_date}} Record number:{{ wod.pk}}?
     </p>
+    <button type="submit" class="btn btn-danger">Delete Wod</button>
     <a href="{{ wod.get_absolute_url }}" class="btn btn-primary stretched-link">
       Cancel
     </a>
-    <button type="submit">Delete Wod</button>
   </form>
 {% endblock %}

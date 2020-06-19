@@ -7,6 +7,11 @@ from .views import (
     WodDetail,
     WodList,
     WodUpdate,
+    TagCreate,
+    TagDelete,
+    TagDetail,
+    TagList,
+    TagUpdate,
 )
 
 urlpatterns = [
@@ -34,5 +39,26 @@ urlpatterns = [
         "wod/<str:pk>/update/",
         WodUpdate.as_view(),
         name="wod_update",
+    ),
+    path("tag/", TagList.as_view(), name="tag_list"),
+    path(
+        "tag/create/",
+        TagCreate.as_view(),
+        name="tag_create",
+    ),
+    path(
+        "tag/<str:slug>/",
+        TagDetail.as_view(),
+        name="tag_detail",
+    ),
+    path(
+        "tag/<str:slug>/update/",
+        TagUpdate.as_view(),
+        name="tag_update",
+    ),
+    path(
+        "tag/<str:slug>/delete/",
+        TagDelete.as_view(),
+        name="tag_delete",
     ),
 ]

@@ -6,12 +6,14 @@
 {% endblock %}
 
 {% block content %}
-  <h2>Wod List</h2>
+<div class="container-fluid">
+  <div class="h2 bg-secondary">Wod List</div>
   <div class="table-responsive">
     <table class="table table-striped table-sm table-bordered">
       <thead class="thead-dark">
       <tr>
         <th>Date Scheduled</th>
+        <th>Workout</th>
         <th>Coach</th>
       </tr>
     </thead>
@@ -19,10 +21,13 @@
     {% for wod in wod_list %}
     <tr>
       <td>
-        <a href="{{ wod.get_absolute_url }}">{{ wod.date}}</a>
+        <a href="{{ wod.get_absolute_url }}">View {{ wod.sched_date }}</a>
       </td>
       <td>
-          {{wod.coach}}
+          {{ wod.workout|truncatewords:6 }}
+      </td>
+      <td>
+        {{wod.coach_link}}
       </td>
     </tr>
     {% empty %}
@@ -33,6 +38,7 @@
     </tbody>
     </table>
   </div>
+</div>
 {% bootstrap_paginate page_obj range=20 %}
 
 {% endblock %}

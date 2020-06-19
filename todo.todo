@@ -1,6 +1,9 @@
 - [] add filter by coach
+    -[] decide if this is most easily done by modifying the model
+- [] rename the organizer app to legacy something...
 - [] add search field atop list view
 - [] extend model to include individual movements
-- [] import hero wods, the girls, etc
+- [] import hero wods, the girls, etc into new model
 - [] add authentication and authenticated views
 - [] add testing framework
+- [] move app into docker and postgres

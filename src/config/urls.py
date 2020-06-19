@@ -21,6 +21,9 @@ from organizer.routers import (
     urlpatterns as organizer_api_urls
 )
 
+"""Tell django about urls.py files in other parts of your application
+and add the urls there to your url tree"""
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("api/v1/", include(organizer_api_urls)),
